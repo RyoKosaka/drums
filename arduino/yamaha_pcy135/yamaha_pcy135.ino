@@ -6,8 +6,10 @@
 MIDI_CREATE_DEFAULT_INSTANCE();
 int RIDE[4] = {500, 50, 51, 0}; // {sensitivity, threshold, note, velocity}*** NOTICE *** velocity must be zero.
 boolean rideFlag = false;
+boolean rideChokeFlag = false;
 unsigned long time_hit_ride;
 unsigned long time_end_ride;
+unsigned long time_choke_ride;
 
 void setup() {
   MIDI.begin(10);
@@ -24,7 +26,7 @@ void loop() {
       rideFlag = true;
     }
 
-    if (rideFlag == false) {  
+    if (rideFlag == false) {
       for (int i = 0; i < 4; i++) {  //peak scan
         int peak = analogRead(A0);
         if (peak > RIDE[3]) {
@@ -75,10 +77,25 @@ void loop() {
     }
   }
 
-  else if (rideFlag == false && sensorValue > 500 && sensorValue < 900 && abs(piezoValue - sensorValue) < 10) {
-      MIDI.sendNoteOn(118, 1, 1);   //(note, velocity, channel) mute note is 118
-      MIDI.sendNoteOn(118, 0, 1);
-      rideFlag = true;
+  if (rideChokeFlag == false && sensorValue > 500 && sensorValue < 900  && abs(piezoValue - sensorValue) < 10) {
+    time_choke_ride = millis();
+    if (time_choke_ride - time_end_ride < 10) {
+      rideChokeFlag = true;
+    }
+    else {
+      MIDI.sendPolyPressure(RIDE[2], 127, 1);
+      MIDI.sendPolyPressure(53, 127, 1);
+      MIDI.sendPolyPressure(59, 127, 1);
+      MIDI.sendPolyPressure(RIDE[2], 0, 1);
+      MIDI.sendPolyPressure(53, 0, 1);
+      MIDI.sendPolyPressure(59, 0, 1);
+      rideChokeFlag = true;
+    }
+  }
+
+  if (rideChokeFlag == true &&  sensorValue < 10) {
+    time_end_ride = millis();
+    rideChokeFlag = false;
   }
 
   if (rideFlag == true && piezoValue < RIDE[1] && sensorValue < 10) {
