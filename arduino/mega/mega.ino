@@ -34,7 +34,12 @@ boolean bellFlag = false;
 boolean pedalFlag = false;
 
 void setup() {
+  //If you use Hairless MIDI, you have to comment out the next line.
   MIDI.begin(10);
+  
+  //And uncomment the next two lines.
+  //MIDI.begin();
+  //Serial.begin(38400); // Do not forget to select the same baudrate (38400) with Hairless MIDI.
 }
 
 void loop() {
