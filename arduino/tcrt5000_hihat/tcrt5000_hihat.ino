@@ -35,7 +35,12 @@ unsigned long time_hit_hihat;
 unsigned long time_end_hihat;
 
 void setup() {
+  //If you use Hairless MIDI, you have to comment out the next line.
   MIDI.begin(10);
+  
+  //And uncomment the next two lines.
+  //MIDI.begin();
+  //Serial.begin(38400); // Do not forget to select the same baudrate (38400) with Hairless MIDI.
   delay(100);
 }
 
