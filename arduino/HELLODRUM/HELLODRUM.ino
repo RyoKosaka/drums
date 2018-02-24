@@ -38,7 +38,12 @@ int UPDOWN = 0;
 int NEXTBACK = 0;
 
 void setup() {
+  //If you use Hairless MIDI, you have to comment out the next line.
   MIDI.begin(10);
+  //And uncomment the next two lines.
+  //MIDI.begin();
+  //Serial.begin(38400); // Do not forget to select the same baudrate (38400) with Hairless MIDI.
+  
   lcd.begin(16, 2);
   lcd.print("hello, world!");
   lcd.setCursor(0, 1);
