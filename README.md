@@ -18,5 +18,4 @@ There is a library for Arduino.(<https://github.com/RyoKosaka/HelloDrum-arduino-
 [Works](https://www.tumblr.com/blog/ryokosaka)
 
 ## Licence
-
-[MIT](http://opensource.org/licenses/mit-license.php)
+![cc](https://komtmt.files.wordpress.com/2015/04/by.png?w=150&h=52)
