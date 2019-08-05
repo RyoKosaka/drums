@@ -14,7 +14,8 @@ There is a library for Arduino.(<https://github.com/RyoKosaka/HelloDrum-arduino-
 ## Author
 
 [@tnctrekit](https://twitter.com/tnctrekit)  
-[Works](https://ryokosaka.github.io)
+[Works](https://ryokosaka.com)
 
 ## Licence
 ![cc](https://komtmt.files.wordpress.com/2015/04/by.png?w=150&h=52)
+[CC-BY](https://creativecommons.org/licenses/by/4.0/)
