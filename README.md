@@ -5,7 +5,8 @@ This is a data storage place.
 
 ## Description
 
-The detailed production process is on the blog.[Open E-Drums](https://open-e-drums.tumblr.com/)  
+The detailed production process is on the blog.  
+[Open E-Drums](https://open-e-drums.tumblr.com/)  
 
 ## Arduino Library
 
@@ -17,5 +18,6 @@ There is a library for Arduino.(<https://github.com/RyoKosaka/HelloDrum-arduino-
 [Works](https://ryokosaka.com)
 
 ## Licence
-![cc](https://komtmt.files.wordpress.com/2015/04/by.png?w=150&h=52)
-[CC-BY](https://creativecommons.org/licenses/by/4.0/)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/CC-BY-SA_icon.svg/320px-CC-BY-SA_icon.svg.png" width="200">  
+
+[CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
