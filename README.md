@@ -1,7 +1,7 @@
 # drums
 
-I am making electronic drums using 3D printer and Arduino.  
-This is a data storage place.
+This is a data storage place.  
+The code here is outdated. The latest code can be found in the HelloDrum Arduino Library.  
 
 ## Description
 
